@@ -1,0 +1,137 @@
+/sw/bioinfo/quast/4.5.4/rackham/bin/quast.py /home/margus/paper1_analysis_files/pilon_files/pilon_pacbio_illumina_combined_genome.fasta -R /home/margus/paper1_analysis_files/canu_genome_assembly_files/Canu_Assembly_Output_Pacbio/reference.fasta
+
+Version: 4.5.4
+
+System information:
+  OS: Linux-3.10.0-957.10.1.el7.x86_64-x86_64-with-centos-7.6.1810-Core (linux_64)
+  Python version: 2.7.6
+  CPUs number: 20
+
+Started: 2019-05-07 16:59:44
+
+Logging to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/quast.log
+NOTICE: Maximum number of threads is set to 5 (use --threads option to set it manually)
+
+CWD: /domus/h1/margus/paper1_analysis_files
+Main parameters: 
+  Threads: 5, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  /home/margus/paper1_analysis_files/canu_genome_assembly_files/Canu_Assembly_Output_Pacbio/reference.fasta ==> reference
+
+Contigs:
+  Pre-processing...
+  /home/margus/paper1_analysis_files/pilon_files/pilon_pacbio_illumina_combined_genome.fasta ==> pilon_pacbio_illumina_combined_genome
+
+2019-05-07 16:59:48
+Running Basic statistics processor...
+  Reference genome:
+    reference.fasta, length = 2765010, num fragments = 1, GC % = 38.11
+  Contig files: 
+    pilon_pacbio_illumina_combined_genome
+  Calculating N50 and L50...
+    pilon_pacbio_illumina_combined_genome, N50 = 2773702, L50 = 1, Total length = 3143327, GC % = 37.78, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/basic_stats/GC_content_plot.pdf
+  Drawing pilon_pacbio_illumina_combined_genome GC content plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/basic_stats/pilon_pacbio_illumina_combined_genome_GC_content_plot.pdf
+Done.
+
+2019-05-07 16:59:51
+Running Contig analyzer...
+  pilon_pacbio_illumina_combined_genome
+  Logging to files /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stdout and contigs_report_pilon_pacbio_illumina_combined_genome.stderr...
+  Aligning contigs to the reference
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/nucmer \
+  -c 65 -l 65 --maxmatch -p quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome \
+  --emem -t 5 quast_results/results_2019_05_07_16_59_44/quast_corrected_input/reference.fasta \
+  quast_results/results_2019_05_07_16_59_44/quast_corrected_input/pilon_pacbio_illumina_combined_genome.fasta \
+  >> quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stdout \
+  2>> quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/delta-filter \
+  -i 95.0 -l 0 quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.delta \
+  > quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.fdelta \
+  2> quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/mummerplot \
+  --html --layout -p quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome \
+  quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.delta \
+  > quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stdout \
+  2> quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/gnuplot/src/gnuplot \
+  quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.gp \
+  > /dev/null 2> quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stderr
+  MUMmer plot saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/pilon_pacbio_illumina_combined_genome_mummerplot.html
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/show-coords \
+  quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.delta \
+  > quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.coords_tmp \
+  2> quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/show-snps \
+  -S -T -H quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.delta \
+  < quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.coords.headless \
+  > quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.all_snps \
+  2> quast_results/results_2019_05_07_16_59_44/contigs_reports/contigs_report_pilon_pacbio_illumina_combined_genome.stderr
+  Analysis is finished.
+
+  Gzipping /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.all_snps to reduce disk space usage...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/nucmer_output/pilon_pacbio_illumina_combined_genome.all_snps.gz
+  Creating total report...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2019-05-07 17:00:03
+Running NA-NGA calculation...
+  pilon_pacbio_illumina_combined_genome, Largest alignment = 2195416, NA50 = 2195416, NGA50 = 2195416, LA50 = 1, LGA50 = 1
+  Drawing cumulative plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/aligned_stats/NGAx_plot.pdf
+Done.
+
+2019-05-07 17:00:05
+Running Genome analyzer...
+  NOTICE: No file with genes provided. Use the -G option if you want to specify it.
+  NOTICE: No file with operons provided. Use the -O option if you want to specify it.
+  pilon_pacbio_illumina_combined_genome
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2019-05-07 17:00:06
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2019-05-07 17:00:08
+RESULTS:
+  Text versions of total report are saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/report.html
+  PDF version (tables and plots) is saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/report.pdf
+  Icarus (contig browser) is saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/icarus.html
+  Log saved to /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/quast.log
+
+Finished: 2019-05-07 17:00:08
+Elapsed time: 0:00:24.389502
+NOTICEs: 4; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

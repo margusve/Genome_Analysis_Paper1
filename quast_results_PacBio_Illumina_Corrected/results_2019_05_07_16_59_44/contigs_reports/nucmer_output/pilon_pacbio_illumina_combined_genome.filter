@@ -1,0 +1,18 @@
+/domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/quast_corrected_input/reference.fasta /domus/h1/margus/paper1_analysis_files/quast_results/results_2019_05_07_16_59_44/quast_corrected_input/pilon_pacbio_illumina_combined_genome.fasta
+NUCMER
+>CP014529.1_Enterococcus_faecium_strain_E745__complete_genome tig00000001_pilon 2765010 2773702
+1 578289 578286 1 5 5 0
+531509
+44716
+-1016
+328
+195
+0
+569593 2765010 2773702 578287 6 6 0
+-775718
+1159562
+-6
+4
+3
+1
+0
