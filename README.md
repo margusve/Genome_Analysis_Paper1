@@ -7,6 +7,6 @@ Generate Genome
 
 2)Correct longread gaps with Illumina short reads (align Illumina to PacBio via BWA, then correct via Pilon)
 
-3)Quality Check of Genome (Quast)
+3)Quality Check of Pilon generated Genome (via Quast)
 
 4)Annotate Genome (via Prokka)
