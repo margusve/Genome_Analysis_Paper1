@@ -3,7 +3,7 @@
 #SBATCH -p core
 #SBATCH -n 2
 #SBATCH -t 00:30:00
-#SBATCH -J veanes1_canu_genome_prokka_annotation
+#SBATCH -J veanes1_prokka_annotation
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user Margus.Veanes.4784@student.uu.se
 
