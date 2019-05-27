@@ -1,0 +1,114 @@
+---
+title: "test"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+directory <- "C:\\Users\\maku\\Downloads\\RNA_Counts"
+sampleFiles <- grep("count",list.files(directory),value=TRUE)
+sampleFiles<-c('rna_bh_counts_1.txt', 'rna_bh_counts_2.txt', 'rna_bh_counts_3.txt', 'rna_serum_counts_1.txt', 'rna_serum_counts_2.txt', 'rna_serum_counts_3.txt')
+sampleCondition<- c('control', 'control', 'control', 't1', 't2', 't3')
+#sampleCondition <- sub("(.*counts*.txt).*","\\1",sampleFiles)
+sampleTable <- data.frame(sampleName = sampleFiles,
+                          fileName = sampleFiles,
+                          condition = sampleCondition)
+```
+
+```{r}
+library("DESeq2")
+ddsHTSeq <- DESeqDataSetFromHTSeqCount(sampleTable = sampleTable,
+                                       directory = directory,
+                                       design= ~ condition)
+ddsHTSeq
+```
+
+```{r, include=TRUE}
+# Filtering out the hypothetical proteins
+mykeep <- !grepl("KAEIAEFF*", rownames(counts(ddsHTSeq)))
+names(mykeep) <- rownames(counts(ddsHTSeq))
+nrow(ddsHTSeq)
+ddsHTSeq <- ddsHTSeq[mykeep,]
+nrow(ddsHTSeq)
+counts(ddsHTSeq)
+
+#Pre-filtering
+keep <- rowSums(counts(ddsHTSeq)) >= 10
+ddsHTSeq <- ddsHTSeq[keep,]
+counts(ddsHTSeq)
+nrow(ddsHTSeq)
+
+
+```
+```{r, include=TRUE}
+
+# Differential expression analysis
+
+ddsHTSeq <- DESeq(ddsHTSeq)
+res <- results(ddsHTSeq)
+res
+```
+
+```{r, include=TRUE}
+# Ordered genes by log2foldchanges
+
+resOrdered <- res[order(res$log2FoldChange),]
+
+summary(res)
+
+sum(res$padj < 0.1, na.rm=TRUE) # Way too many?
+
+```
+
+```{r, include=TRUE}
+
+# Exporting most significant genes to csv
+
+resSig <- subset(resOrdered, padj < 0.01)
+resSig
+
+write.csv(as.data.frame(resOrdered), 
+          file="Serum_vs_BH.csv")
+
+```
+
+```{r, include=TRUE}
+# Log fold change shrinkage for visualization and ranking
+
+resultsNames(ddsHTSeq)
+
+resLFC <- lfcShrink(ddsHTSeq, coef="condition_t1_vs_control", type="apeglm")
+resLFC
+
+```
+
+```{r, include=TRUE}
+
+# Plot of shrunken log2 fold changes
+plotMA(resLFC, ylim=c(-2,2))
+
+```
+
+```{r, include=TRUE}
+
+library("pheatmap")
+
+ntd <- normTransform(ddsHTSeq)
+
+select <- order(rowMeans(counts(ddsHTSeq,normalized=TRUE)),
+                decreasing=TRUE)
+
+#as.matrix(resOrdered) # ordered by log2FoldChanges
+
+rowMeansCounts <- assay(ntd)[select,]
+topVarGenes <- subset(rowMeansCounts, rownames(rowMeansCounts) %in% row.names(resOrdered)[1:20])
+
+
+df <- as.data.frame(colData(ddsHTSeq)[,c("condition","sizeFactor")])
+pheatmap(topVarGenes, cluster_rows=FALSE, show_rownames=TRUE,
+         cluster_cols=FALSE, annotation_col=df)
+
+```
