@@ -1,7 +1,7 @@
 # Genome_Analysis_Paper1
 Genome Analysis Course data for paper 1, Margus Veanes
 # Project Plan
-##Genomics
+#Genomics
 
 1)Via longread PacBio data (via Canu)
 
@@ -13,7 +13,7 @@ Genome Analysis Course data for paper 1, Margus Veanes
 
 5)Synteny Comparison with related Genome (via Artemis ACT)
 
-##Transcriptomics
+#Transcriptomics
 
 6)Reads preprocessing and quality checking (via Trimmomatic and FastQC)
 
