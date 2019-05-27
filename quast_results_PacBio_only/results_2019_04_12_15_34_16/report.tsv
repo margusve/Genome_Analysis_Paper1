@@ -1,0 +1,49 @@
+Assembly	Enterococci.contigs
+# contigs (>= 0 bp)	8
+# contigs (>= 1000 bp)	8
+# contigs (>= 5000 bp)	7
+# contigs (>= 10000 bp)	7
+# contigs (>= 25000 bp)	5
+# contigs (>= 50000 bp)	2
+Total length (>= 0 bp)	3143156
+Total length (>= 1000 bp)	3143156
+Total length (>= 5000 bp)	3138760
+Total length (>= 10000 bp)	3138760
+Total length (>= 25000 bp)	3110222
+Total length (>= 50000 bp)	2999932
+# contigs	8
+Largest contig	2773588
+Total length	3143156
+Reference length	2765010
+GC (%)	37.78
+Reference GC (%)	38.11
+N50	2773588
+NG50	2773588
+N75	2773588
+NG75	2773588
+L50	1
+LG50	1
+L75	1
+LG75	1
+# misassemblies	1
+# misassembled contigs	1
+Misassembled contigs length	2773588
+# local misassemblies	0
+# unaligned mis. contigs	1
+# unaligned contigs	5 + 2 part
+Unaligned length	325102
+Genome fraction (%)	100.000
+Duplication ratio	1.019
+# N's per 100 kbp	0.00
+# mismatches per 100 kbp	0.04
+# indels per 100 kbp	4.38
+Largest alignment	2195332
+Total aligned length	2818055
+NA50	2195332
+NGA50	2195332
+NA75	578256
+NGA75	2195332
+LA50	1
+LGA50	1
+LA75	2
+LGA75	1
