@@ -3,7 +3,7 @@
 #SBATCH -p core
 #SBATCH -n 2
 #SBATCH -t 01:00:00
-#SBATCH -J veanes1_bwa_pacbio_illumina_align
+#SBATCH -J veanes1_samtools
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user Margus.Veanes.4784@student.uu.se
 
