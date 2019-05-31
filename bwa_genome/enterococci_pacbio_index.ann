@@ -1,0 +1,17 @@
+3143156 8 11
+0 tig00000001 len=2773588 reads=10654 covStat=4301.78 gappedBases=no class=contig suggestRepeat=no suggestCircular=yes
+0 2773588 0
+0 tig00000018 len=226344 reads=575 covStat=520.60 gappedBases=no class=contig suggestRepeat=no suggestCircular=yes
+2773588 226344 0
+0 tig00000021 len=40017 reads=125 covStat=57.37 gappedBases=no class=contig suggestRepeat=no suggestCircular=yes
+2999932 40017 0
+0 tig00000023 len=44596 reads=64 covStat=114.28 gappedBases=no class=contig suggestRepeat=no suggestCircular=no
+3039949 44596 0
+0 tig00000026 len=17158 reads=6 covStat=10.03 gappedBases=no class=contig suggestRepeat=no suggestCircular=no
+3084545 17158 0
+0 tig00000029 len=25677 reads=17 covStat=61.92 gappedBases=no class=contig suggestRepeat=no suggestCircular=no
+3101703 25677 0
+0 tig00000031 len=11380 reads=10 covStat=13.22 gappedBases=no class=contig suggestRepeat=no suggestCircular=no
+3127380 11380 0
+0 tig00000037 len=4396 reads=7 covStat=5.83 gappedBases=no class=contig suggestRepeat=no suggestCircular=no
+3138760 4396 0
